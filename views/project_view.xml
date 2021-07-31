@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_telyman_form_view" model="ir.ui.view">
+        <field name="name">project.telyman.form.view</field>
+        <field name="model">project.telyman</field>
+        <field name="arch" type="xml">
+            <form string="Proyectos">
+                <sheet string="Tipo de identificación">
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="cod_sitio"/>
+                        <field name="nombre_sitio"/>
+                        <field name="operador"/>
+                        <field name="tipo_trabajo"/>
+                        <field name="ubicacion_Gam_rural"/>
+                        <field name="ubicacion"/>
+                        <field name="provincia"/>
+                        <field name="nombre_proyecto"/>
+                        <field name="coord_x"/>
+                        <field name="coord_y"/>
+                        <field name="proyecto_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="project_telyman_tree_view" model="ir.ui.view">
+        <field name="name">project.telyman.tree.view</field>
+        <field name="model">project.telyman</field>
+        <field name="arch" type="xml">
+            <tree string="Proyectos">
+                <field name="name"/>
+                <field name="cod_sitio"/>
+                <field name="nombre_sitio"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_project_telyman" model="ir.actions.act_window">
+        <field name="name">Proyectos</field>
+        <field name="res_model">project.telyman</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_project_telyman" name="Proyectos" parent="menu_proyectos_padre" sequence="1" action="action_project_telyman"/>
+</odoo>
